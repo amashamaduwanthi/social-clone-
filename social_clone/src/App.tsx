@@ -6,6 +6,7 @@ import './styles/forms.css';
 import './styles/layout.css';
 import './styles/auth.css';
 import {useEffect, useState} from "react";
+import Home from "./components/Home.tsx";
 
 
 
@@ -143,7 +144,7 @@ function App() {
                 <Route path="/" element={
                     <PrivateRoute>
                         <MainLayout>
-
+                            <Home />
                         </MainLayout>
                     </PrivateRoute>
                 } />
@@ -168,16 +169,7 @@ function App() {
                         </PrivateRoute>
                     }
                 />
-                <Route
-                    path="/feed"
-                    element={
-                        <PrivateRoute>
-                            <MainLayout>
 
-                            </MainLayout>
-                        </PrivateRoute>
-                    }
-                />
 
             </Routes>
         </Router>

@@ -1,0 +1,266 @@
+/* Home Page Styles */
+:root {
+  --header-height: 64px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #f3f4f6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Styles */
+.home-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.home-header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.home-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0;
+}
+
+.create-post-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #3b82f6;
+  color: white;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.create-post-btn:hover {
+  background-color: #2563eb;
+}
+
+/* Main Content */
+.home-main {
+  flex: 1;
+  width: 100%;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 2rem;
+  overflow-y: auto;
+}
+
+/* Ensure full viewport height for sections */
+.section-fullscreen {
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Make sure forms and content take full height */
+.full-height-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Feed Container */
+.feed-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex: 1;
+  width: 100%;
+}
+
+/* Empty State */
+.empty-feed {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  text-align: center;
+}
+
+.empty-feed p {
+  color: #718096;
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .home-header-content {
+    padding: 0 1rem;
+  }
+  
+  .home-main {
+    padding: 0 1rem 1.5rem;
+  }
+  
+  .create-post-btn span {
+    display: none;
+  }
+  
+  .create-post-btn {
+    padding: 0.5rem;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    justify-content: center;
+  }
+  
+  .create-post-btn svg {
+    margin: 0;
+  }
+}
+
+/* Animation for post creation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.post-create-animation {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+/* Post Creation Form */
+.post-create-container {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.post-textarea {
+  width: 100%;
+  min-height: 120px;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: #1a202c;
+  background-color: #fff;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  resize: vertical;
+}
+
+.post-textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.post-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.75rem;
+  margin-top: 0.75rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.photo-upload-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  background: transparent;
+  border: none;
+  border-radius: 0.5rem;
+  color: #64748b;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.photo-upload-btn:hover {
+  color: #3b82f6;
+  background-color: #f8fafc;
+}
+
+.photo-upload-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.post-submit-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.post-submit-btn:hover:not(:disabled) {
+  background-color: #2563eb;
+}
+
+.post-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  background-color: #93c5fd;
+}
+
+/* Animation */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .post-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .post-submit-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
