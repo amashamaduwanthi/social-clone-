@@ -5,6 +5,7 @@ import { FaComment, FaShare, FaEllipsisH, FaTimes } from 'react-icons/fa';
 import { formatDistanceToNow } from 'date-fns';
 import { useState } from 'react';
 import '../styles/feed.css';
+import LikeButton from "./LikeButton.tsx";
 
 interface Post {
     id: string;
@@ -131,7 +132,10 @@ const Feed = () => {
                         </div>
 
                         <div className="post-actions">
-
+                            <LikeButton
+                                postId={post.id}
+                                initialLikes={post.likes || 0}
+                            />
                             <button 
                                 className={`action-button ${openCommentSection === post.id ? 'active' : ''}`} 
                                 aria-label="Comment"
