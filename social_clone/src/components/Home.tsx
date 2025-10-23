@@ -4,6 +4,7 @@ import { auth } from '../firebase';
 import { FaPlus } from 'react-icons/fa';
 import '../styles/home.css';
 import PostCreate from "./PostCreate.tsx";
+import Feed from "./Feed.tsx";
 
 const Home = () => {
   // If user is not authenticated, redirect to login
@@ -38,7 +39,7 @@ const Home = () => {
           </div>
         )}
         <div className="feed-container">
-
+          <Feed />
         </div>
       </main>
     </div>

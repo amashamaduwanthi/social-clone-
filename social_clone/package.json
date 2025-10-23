@@ -10,8 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "core-js": "^3.46.0",
+    "date-fns": "^4.1.0",
+    "firebase": "^12.4.0",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^7.9.4",
+    "react-toastify": "^11.0.5",
+    "uuid": "^13.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",

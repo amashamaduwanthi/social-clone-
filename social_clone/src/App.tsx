@@ -2,12 +2,13 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { auth } from './firebase';
 import Login from './components/auth/Login';
 import Signup from './components/auth/Signup';
+import Home from './components/Home';
 import './styles/forms.css';
 import './styles/layout.css';
 import './styles/auth.css';
+import ProfilePage from "./pages/ProfilePage.tsx";
 import {useEffect, useState} from "react";
-import Home from "./components/Home.tsx";
-
+import Feed from "./components/Feed.tsx";
 
 
 // Protected Route component
@@ -164,12 +165,21 @@ function App() {
                     element={
                         <PrivateRoute>
                             <MainLayout>
-
+                                <ProfilePage />
                             </MainLayout>
                         </PrivateRoute>
                     }
                 />
-
+                <Route
+                    path="/feed"
+                    element={
+                        <PrivateRoute>
+                            <MainLayout>
+                                <Feed />
+                            </MainLayout>
+                        </PrivateRoute>
+                    }
+                />
 
             </Routes>
         </Router>
