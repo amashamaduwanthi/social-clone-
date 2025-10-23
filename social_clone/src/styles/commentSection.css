@@ -1,0 +1,160 @@
+/* Comment Section */
+.comment-section {
+  margin-top: 1rem;
+  padding: 0.5rem 0;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* Comment Form */
+.comment-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.comment-input {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.comment-input:focus {
+  border-color: #4a90e2;
+}
+
+.comment-submit {
+  padding: 0.5rem 1rem;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.comment-submit:hover:not(:disabled) {
+  background-color: #3a7bc8;
+}
+
+.comment-submit:disabled {
+  background-color: #b0c4e8;
+  cursor: not-allowed;
+}
+
+/* Comments List */
+.comments-list {
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+/* Custom scrollbar */
+.comments-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.comments-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.comments-list::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.comments-list::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Comment Item */
+.comment-item {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.comment-item:last-child {
+  border-bottom: none;
+}
+
+.comment-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.comment-content {
+  flex: 1;
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.comment-username {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #262626;
+}
+
+.comment-timestamp {
+  font-size: 0.75rem;
+  color: #8e8e8e;
+}
+
+.comment-text {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #262626;
+}
+
+/* No Comments */
+.no-comments {
+  color: #8e8e8e;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* Error Message */
+.comment-error {
+  color: #ed4956;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+/* Loading State */
+.comment-loading {
+  color: #8e8e8e;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .comment-form {
+    flex-direction: column;
+  }
+  
+  .comment-submit {
+    align-self: flex-end;
+  }
+  
+  .comments-list {
+    max-height: 200px;
+  }
+}

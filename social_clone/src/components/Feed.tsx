@@ -6,6 +6,7 @@ import { formatDistanceToNow } from 'date-fns';
 import { useState } from 'react';
 import '../styles/feed.css';
 import LikeButton from "./LikeButton.tsx";
+import CommentSection from "./CommentSection.tsx";
 
 interface Post {
     id: string;
@@ -152,17 +153,16 @@ const Feed = () => {
                         {/* Comment Section */}
                         {openCommentSection === post.id && (
                             <div className="comment-section-container">
-                                <button 
-                                    className="close-comments" 
+                                <button
+                                    className="close-comments"
                                     onClick={() => setOpenCommentSection(null)}
                                     aria-label="Close comments"
                                 >
                                     <FaTimes />
                                 </button>
-
+                                <CommentSection postId={post.id} />
                             </div>
                         )}
-                        
                         <div className="post-caption">
                             <strong>{post.userDisplayName}</strong> {post.caption}
                         </div>
