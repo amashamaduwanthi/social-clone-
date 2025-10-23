@@ -3,6 +3,7 @@ import { Navigate } from 'react-router-dom';
 import { auth } from '../firebase';
 import { FaPlus } from 'react-icons/fa';
 import '../styles/home.css';
+import PostCreate from "./PostCreate.tsx";
 
 const Home = () => {
   // If user is not authenticated, redirect to login
@@ -30,7 +31,10 @@ const Home = () => {
       <main className="home-main">
         {showPostCreate && (
           <div className="post-create-animation">
-
+            <PostCreate
+                onPostCreated={() => setShowPostCreate(false)}
+                onCancel={() => setShowPostCreate(false)}
+            />
           </div>
         )}
         <div className="feed-container">
