@@ -38,6 +38,7 @@
     margin: 0 auto;
     padding: 1rem;
     padding-bottom: 80px; /* Space for bottom navigation */
+}
 
 /* Loading State */
 .feed-loading {
