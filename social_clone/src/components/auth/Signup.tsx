@@ -62,7 +62,7 @@ const Signup = () => {
     <div className="auth-page">
       <div className="auth-container">
         <div className="auth-branding">
-          <div className="auth-logo">SocialClone</div>
+          <div className="auth-logo">PetPicShare</div>
           <h2 className="auth-tagline">Join SocialClone today to connect with friends and the world around you.</h2>
         </div>
 

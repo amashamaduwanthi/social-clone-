@@ -50,7 +50,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
             <header className="header">
                 <div className="header-container">
                     <a href="/" className="logo">
-                        <span>SocialClone</span>
+                        <span>PetPicShare</span>
                     </a>
                     <nav className="nav-links">
                         <a href="/" className="nav-link active">
